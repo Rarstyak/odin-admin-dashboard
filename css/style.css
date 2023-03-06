@@ -15,6 +15,33 @@ body {
 .header {
     grid-area: header;
     background-color: white;
+
+    display: grid;
+    grid:
+        "search user-info" 1fr
+        "greeting header-button-row" 1fr
+        / 2fr 1fr;
+}
+
+.header form {
+    grid-area: search;
+}
+
+.header .user-info {
+    grid-area: user-info;
+}
+
+.header .greeting {
+    grid-area: greeting;
+}
+
+.header .header-button-row {
+    grid-area: header-button-row;
+}
+
+.header-button-row button {
+    color: white;
+    background-color: lightblue;
 }
 
 .sidebar {
@@ -61,6 +88,7 @@ section.announcement {
 .announcement-grid {
     background-color: white;
     display: grid;
+    padding: 1rem;
 }
 
 section.trending {
@@ -70,4 +98,22 @@ section.trending {
 .trending-grid {
     background-color: white;
     display: grid;
+}
+
+.trending-card {
+    display: grid;
+    padding: 1rem;
+    grid: 
+        "img info"
+        / 5rem 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.trending-card img {
+    grid-area: img;
+}
+
+.trending-card .info {
+    grid-area: info;
 }
