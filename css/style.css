@@ -1,3 +1,16 @@
+:root {
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    color: slategray;
+}
+
 html,
 body {
     height: 100%;
@@ -9,56 +22,111 @@ body {
     grid: 
         "sidebar header" 10rem
         "sidebar main-content" 1fr
-        / 15rem 1fr;
+        / 20rem 1fr;
 }
 
 .header {
     grid-area: header;
     background-color: white;
 
+    padding: 1rem 2rem;
     display: grid;
     grid:
         "search user-info" 1fr
         "greeting header-button-row" 1fr
         / 2fr 1fr;
+    column-gap: 1rem;
+    align-items: center;
+
+    font-weight: bold;
 }
 
 .header form {
     grid-area: search;
+    display: flex;
+    gap: 1rem;
+}
+
+#search {
+    flex: 1;
+    border-radius: 1rem;
+    border: none;
+    background-color: lightgray;
 }
 
 .header .user-info {
     grid-area: user-info;
+    justify-self: right;
+    display: flex;
+    gap: 1rem;
 }
 
 .header .greeting {
     grid-area: greeting;
+
+    display: grid;
+    grid: 
+        "img info"
+        / 5rem 1fr;
+    align-items: center;
+}
+
+.greeting img {
+    grid-area: img;
+}
+
+.greeting .info {
+    grid-area: info;
+}
+
+.greeting .info div:last-child {
+    font-size: 1.5rem;
 }
 
 .header .header-button-row {
     grid-area: header-button-row;
+    justify-self: right;
+    display: flex;
+    gap: 1rem;
 }
 
 .header-button-row button {
     color: white;
-    background-color: lightblue;
+    background-color: teal;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+
+    font-weight: bold;
 }
 
 .sidebar {
     grid-area: sidebar;
     color: white;
-    background-color: lightblue;
+    background-color: teal;
+
+    display: grid;
+    grid-auto-rows: 4rem;
+    align-items: center;
+}
+
+.sidebar-item {
+    display: grid;
+    grid: 4rem / 3rem 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .main-content {
     grid-area: main-content;
     background-color: lightgray;
+    padding: 1rem;
 
     display: grid;
     grid:
         "project announcement" 1fr
         "project trending" 1fr
-        / 3fr 1fr;
+        / 2fr 1fr;
     gap: 1rem;
 }
 
@@ -79,6 +147,13 @@ section.project {
 .project-card {
     background-color: white;
     border-left: 0.5rem solid orange;
+}
+
+.project-card-button-row {
+    padding: 1rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 section.announcement {
@@ -102,7 +177,7 @@ section.trending {
 
 .trending-card {
     display: grid;
-    padding: 1rem;
+    padding: 0 1rem;
     grid: 
         "img info"
         / 5rem 1fr;
@@ -116,4 +191,12 @@ section.trending {
 
 .trending-card .info {
     grid-area: info;
+}
+
+.trending-card .info a:first-child {
+    color: black;
+}
+
+button {
+    border: none;
 }
